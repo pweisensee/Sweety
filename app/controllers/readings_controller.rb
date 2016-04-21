@@ -3,9 +3,18 @@ class ReadingsController < ApplicationController
   end
 
   def create
-    @article = Article.new(@article = Article.new(params.require(:reading).permit(:blood_glucose)))
+    @reading = Reading.new(reading_params)
 
-    @article.save
-    redirect_to @article
+    @reading.save
+    redirect_to @reading
+  end
+
+  def show
+    @reading = Reading.find(params[:id])
   end
 end
+
+private
+  def reading_params
+    params.require(:reading).permit(:glucose_level)
+  end
