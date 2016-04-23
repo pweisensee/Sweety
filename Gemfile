@@ -14,8 +14,24 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Use Devise for User authentication and creation
+gem 'devise', '>=4.0'
+
+# Use bootstrap for styling
+gem 'bootstrap-sass'
+
+# Use datepicker for picking dates to run reports
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+# Use Simple Form for improved forms and datetime picker above
+gem 'simple_form'
+# Use moment for enhanced datetime picker above
+gem 'momentjs-rails'
+
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+# Use jquery Turbolinks for improved menu JS
+gem 'jquery-turbolinks'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

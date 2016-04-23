@@ -1,10 +1,12 @@
 <%= form_for :reading, url: readings_path do |f| %>
-    <p>
-      <%= f.label :glucose_level %><br>
-      <%= f.text_field :glucose_level %>
-    </p>
 
-    <p>
-      <%= f.submit %>
-    </p>
+  <div class="form-group">
+    <%= f.label :glucose_level %><br>
+    <%= f.text_field :glucose_level, class: 'form-control', autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save", class: 'btn btn-success' %>
+    <%= link_to "Cancel", root_path, class: 'btn btn-default'  %>
+  </div>
 <% end %>

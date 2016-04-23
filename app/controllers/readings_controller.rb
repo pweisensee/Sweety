@@ -1,4 +1,10 @@
 class ReadingsController < ApplicationController
+  before_action :authenticate_user!
+
+  def index
+    @readings = Reading.all
+  end
+
   def new
   end
 
@@ -16,5 +22,5 @@ end
 
 private
   def reading_params
-    params.require(:reading).permit(:glucose_level)
+    params.require(:reading).permit(:glucose_level, :current_user)
   end
