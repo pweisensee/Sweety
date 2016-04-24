@@ -6,13 +6,18 @@ class ReadingsController < ApplicationController
   end
 
   def new
+    @reading = Reading.new
   end
 
   def create
     @reading = Reading.new(reading_params)
+    @reading.user = current_user
 
-    @reading.save
-    redirect_to @reading
+    if @reading.save
+      redirect_to @reading
+    else
+      render 'new'
+    end
   end
 
   def show

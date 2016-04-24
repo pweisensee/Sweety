@@ -20,14 +20,6 @@ gem 'devise', '>=4.0'
 # Use bootstrap for styling
 gem 'bootstrap-sass'
 
-# Use datepicker for picking dates to run reports
-gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
-# Use Simple Form for improved forms and datetime picker above
-gem 'simple_form'
-# Use moment for enhanced datetime picker above
-gem 'momentjs-rails'
-
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Use jquery Turbolinks for improved menu JS

@@ -1,0 +1,7 @@
+<h4><strong>Blood Glucose Level Report</strong></h4>
+
+  <% if @report.start_date === @report.end_date %>
+    <%= render 'date_report' %>
+  <% else %>
+    <%= render 'range_report' %>
+  <% end %>

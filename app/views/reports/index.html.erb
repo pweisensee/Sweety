@@ -1,0 +1,20 @@
+<h1>Report History</h1>
+
+<div class="btn btn-default">
+  <%= link_to 'Run new report', new_report_path %>
+</div>
+
+<table>
+  <tr>
+    <th>From</th>
+    <th>To</th>
+  </tr>
+   
+  <% @reports.each do |report| %>
+    <tr>
+      <td><%= report.start_date %></td>
+      <td><%= report.end_date.strftime("%A, %B %d, %Y") %></td>
+      <td><%= link_to "View Report", report %></td>
+    </tr>
+  <% end %>
+</table>

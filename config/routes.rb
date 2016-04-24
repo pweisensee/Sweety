@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :users, :readings
+  resources :users, :readings, :reports
 
   # You can have the root of your site routed with "root"
   root 'home#index'

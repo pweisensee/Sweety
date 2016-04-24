@@ -1,9 +1,11 @@
 class Reading < ActiveRecord::Base
   belongs_to :user
 
-  validate :reading_quota
+  validate :reading_quota, :on => :create
+
   validates :glucose_level, presence: true,
-            numericality: { only_integer: true, greater_than_or_equal_to: 0}
+            numericality: { only_integer: true, greater_than_or_equal_to: 0,
+                            :message => "Readings must be a positive integer. Please try again."}
 
   mattr_accessor :current_user
 
