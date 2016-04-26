@@ -6,14 +6,18 @@ class ReportsController < ApplicationController
   end
 
   def new
+    @report = Report.new
   end
 
   def create
     @report = Report.new(report_params)
     @report.user = current_user
 
-    @report.save
-    redirect_to @report
+    if @report.save
+      redirect_to @report
+    else
+      render 'new'
+    end
   end
 
   def show

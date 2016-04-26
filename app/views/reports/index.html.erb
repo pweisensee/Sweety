@@ -1,7 +1,10 @@
 <h1>Report History</h1>
 
-<div class="btn btn-default">
-  <%= link_to 'Run new report', new_report_path %>
+<div>
+  <%= link_to "Run today's report", new_report_path, class: 'btn btn-default' %>
+  <%= link_to 'Run month-to-date report', new_report_path, class: 'btn btn-default' %>
+  <%= link_to 'Run month report', new_report_path, class: 'btn btn-default' %>
+  <%= link_to 'Create new report', new_report_path, class: 'btn btn-default' %>
 </div>
 
 <table>
@@ -14,7 +17,7 @@
     <tr>
       <td><%= report.start_date.strftime("%A, %B %d, %Y") %></td>
       <td><%= report.end_date.strftime("%A, %B %d, %Y") %></td>
-      <td><%= link_to "View Report", report %></td>
+      <td><%= link_to "View Report", report, class: 'btn btn-success'  %></td>
     </tr>
   <% end %>
 </table>
