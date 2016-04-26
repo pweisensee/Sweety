@@ -1,5 +1,4 @@
 require 'rails_helper'
-#require 'reading'
 
 describe Reading, type: :model do
 

@@ -1,5 +1,4 @@
 require 'rails_helper'
-#require 'Report'
 
 describe Report, type: :model do
   it "has no reports to begin with" do

@@ -1,5 +1,4 @@
 require 'rails_helper'
-#require 'user'
 
 describe User, type: :model do
   it "has none to begin with" do
