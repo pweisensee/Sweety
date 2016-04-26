@@ -11,7 +11,7 @@
       },
       xAxis: {
         type: 'datetime',
-        dateTimeLabelFormats: { // don't display the dummy year
+        dateTimeLabelFormats: {
           millisecond: '%H:%M',
           second: '%H:%M',
           minute: '%H:%M',
@@ -38,10 +38,12 @@
       tooltip: {
         valueSuffix: ' mg/dL'
       },
-      legend: {},
+      legend: {
+        enabled: false
+      },
       series: [{
         name: 'Blood Glucose Level',
-        data: [<%= @report.concat_to_json %>]
+        data: [<%= @report.json %>]
       }]
     });
   });

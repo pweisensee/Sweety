@@ -9,15 +9,14 @@ class Reading < ActiveRecord::Base
 
   mattr_accessor :current_user
 
-  scope :month_to_today, -> { where("MONTH(created_at) = ?", Date.month)}
-  scope :by_month, ->(date) { where("MONTH(created_at) = ?", date.month)}
-  scope :on_date, ->(date) { where("created_at = ?", date)}
-  scope :on_today, -> { where("created_at = ?", Date.now)}
+  # default scope for readings arranges them in ascending order
+  default_scope { order(created_at: :asc) }
+
   scope :within_dates, ->(d1, d2) {where(:created_on => d1..d2)}
 
   private
     def reading_quota
-      if current_user.readings.today.count >= 4
+      if current_user && current_user.readings.today.count >= 4
         errors.add(:base, "Exceeds daily limit for blood glucose readings. Please try again tomorrow.")
       end
     end

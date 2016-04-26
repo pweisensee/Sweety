@@ -4,10 +4,10 @@ class Report < ActiveRecord::Base
   belongs_to :user
   has_many :readings, through: :user
 
-  def concat_to_json
+  def json
     @json = ""
-    readings_subset.each_with_index do |val, index|
-      @json = @json + "[#{index}, #{val.glucose_level}, #{val.created_at.to_i*1000}],"
+    readings_subset.each do |val|
+      @json = @json + "[#{val.created_at.to_i*1000}, #{val.glucose_level}],"
     end
     @json.to_s.chomp(',')
   end
