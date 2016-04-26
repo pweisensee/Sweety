@@ -5,3 +5,38 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Reading.destroy_all
+Report.destroy_all
+User.destroy_all
+
+10.times do |index|
+  User.create!(email: "u#{index}@gmail.com",
+              name: "user#{index}",
+              password: "test1234")
+end
+
+test_user = User.first
+
+100.times do |index|
+  reading = Reading.create!(user_id: test_user.id,
+                  glucose_level: (rand(350)))
+  created = (rand*66).days.ago
+  reading.created_at = created
+  reading.created_on = created
+  reading.save
+end
+
+Report.create!(user_id: test_user.id,
+              start_date: Date.today,
+               end_date: Date.today)
+
+Report.create!(user_id: test_user.id,
+               start_date: Date.today.beginning_of_month,
+               end_date: Date.today)
+
+Report.create!(user_id: test_user.id,
+               start_date: 3.months.ago.beginning_of_month,
+               end_date: Date.today)
+
+p "Created #{Reading.count} readings, #{Report.count} reports, #{User.count} users"
