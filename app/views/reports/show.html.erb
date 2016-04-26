@@ -1,9 +1,23 @@
+<h4><%= link_to "Back", :back, class: 'btn btn-default' %></h4>
 <h4><strong>Blood Glucose Level Report</strong></h4>
-<br />
-<p>Average: <%=  %></p>
-<p>Maximum: <%=  %></p>
-<p>Minimum: <%=  %></p>
 
 <%= details(@report) %>
 
-<p><%= link_to "Back", :back, class: 'btn btn-default'  %></p>
+<h4>Details</h4>
+<table>
+  <tr>
+    <th>Average</th>
+    <td><%= @report.average_glucose %></td>
+  </tr>
+  <tr>
+    <th>Maximum</th>
+    <td><%= @report.max_glucose %></td>
+  </tr>
+  <tr>
+    <th>Minimum</th>
+    <td><%= @report.min_glucose %></td>
+  </tr>
+</table>
+
+
+<%= render 'readings_list' %>

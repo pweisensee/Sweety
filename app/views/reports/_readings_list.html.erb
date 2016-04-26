@@ -1,0 +1,17 @@
+<br/>
+<div>
+  <h4>All Readings</h4>
+  <table>
+    <tr>
+      <th>Glucose Level (mg/dL)</th>
+      <th>Date Created</th>
+    </tr>
+     
+    <% @report.readings_subset.each do |reading| %>
+      <tr>
+        <td><%= reading.glucose_level %></td>
+        <td><%= reading.created_at.strftime("%A, %B %d, %Y") %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

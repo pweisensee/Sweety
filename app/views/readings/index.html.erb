@@ -5,15 +5,15 @@
 </div>
 
 <table>
-    <tr>
-      <th>Glucose Level (mg/dL)</th>
-      <th>Date Created</th>
-    </tr>
+  <tr>
+    <th>Glucose Level (mg/dL)</th>
+    <th>Date Created</th>
+  </tr>
    
-    <% @readings.each do |reading| %>
-      <tr>
-        <td><%= reading.glucose_level %></td>
-        <td><%= reading.created_at.strftime("%A, %B %d, %Y") %></td>
-      </tr>
-    <% end %>
+  <% @readings.each do |reading| %>
+    <tr>
+      <td><%= reading.glucose_level %></td>
+      <td><%= reading.created_at.strftime("%A, %B %d, %Y") %></td>
+    </tr>
+  <% end %>
 </table>
