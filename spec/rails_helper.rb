@@ -28,11 +28,10 @@ require 'capybara/rails'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
-  # If you're not using ActiveRecord, or you'd prefer not to run each of your
-  # examples within a transaction, remove the following line or assign false
-  # instead of true.
+  # set transactional fictures off in favor of database cleaner
   config.use_transactional_fixtures = false
 
+  #ensure database cleaner is managing db transactions
   config.before(:suite) do
     if config.use_transactional_fixtures?
       raise(<<-MSG)
@@ -77,6 +76,16 @@ RSpec.configure do |config|
   config.append_after(:each) do
     DatabaseCleaner.clean
   end
+
+  # Setup for using capybara
+  config.include Warden::Test::Helpers
+  config.before :suite do
+    Warden.test_mode!
+  end
+  config.after :each do
+    Warden.test_reset!
+  end
+  config.include Capybara::DSL
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
