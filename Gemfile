@@ -34,6 +34,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  # Use Rspec for unit testing
+  gem 'rspec-rails'
+  # Use Capybara for integration/acceptance testing
+  gem 'capybara'
+  # Use database cleaner for easier db cleaning
+  gem 'database_cleaner'
 end
 
 group :development do
