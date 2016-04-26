@@ -1,0 +1,49 @@
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+    $('#range-chart').highcharts({
+      title: {
+        text: 'Blood Glucose Level',
+        x: -20 //center
+      },
+      subtitle: {
+        text: '<%= @report.start_date.strftime("%B %d, %Y")%> - <%= @report.end_date.strftime("%B %d, %Y")%>',
+        x: -20
+      },
+      xAxis: {
+        type: 'datetime',
+        dateTimeLabelFormats: { // don't display the dummy year
+          millisecond: '%H:%M',
+          second: '%H:%M',
+          minute: '%H:%M',
+          hour: '%H:%M',
+          day: '%b %e',
+          week: '%b %e',
+          month: '%b %e',
+          year: '%b'
+        },
+        title: {
+          text: 'Date'
+        }
+      },
+        yAxis: {
+          title: {
+            text: 'Blood Glucose Level (mg/dL)'
+          },
+          plotLines: [{
+            value: 0,
+            width: 2,
+            color: '#808080'
+          }]
+      },
+      tooltip: {
+        valueSuffix: ' mg/dL'
+      },
+      legend: {},
+      series: [{
+        name: 'Blood Glucose Level',
+        data: [<%= @report.concat_to_json %>]
+      }]
+    });
+  });
+
+</script>

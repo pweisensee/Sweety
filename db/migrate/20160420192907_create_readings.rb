@@ -6,6 +6,7 @@ class CreateReadings < ActiveRecord::Migration
       t.timestamps null: false
 
       t.integer :user_id
+      t.date :created_on
     end
   end
 end

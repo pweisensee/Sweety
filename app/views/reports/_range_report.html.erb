@@ -1,4 +1,6 @@
-<h4>Start Date: <%= @report.start_date.strftime("%A, %B %d, %Y") %> </h4>
-<h4>End Date: <%= @report.end_date.strftime("%A, %B %d, %Y") %> </h4>
+<p><%= @report.start_date.strftime("%B %d, %Y") %> - <%= @report.end_date.strftime("%B %d, %Y") %></p>
 <br/>
+<div id="range-chart" class="chart"></div>
+<%= render 'chart' %>
+
 <p><%= link_to "Back", :back, class: 'btn btn-default'  %></p>

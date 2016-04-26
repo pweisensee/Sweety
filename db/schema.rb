@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20160424003254) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.integer  "user_id",       limit: 4
+    t.date     "created_on"
   end
 
   create_table "reports", force: :cascade do |t|

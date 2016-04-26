@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :reports
+
   has_many :readings do
     def today
       where(:created_at => (Time.zone.now.beginning_of_day..Time.zone.now))

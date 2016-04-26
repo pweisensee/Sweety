@@ -13,6 +13,7 @@ class Reading < ActiveRecord::Base
   scope :by_month, ->(date) { where("MONTH(created_at) = ?", date.month)}
   scope :on_date, ->(date) { where("created_at = ?", date)}
   scope :on_today, -> { where("created_at = ?", Date.now)}
+  scope :within_dates, ->(d1, d2) {where(:created_on => d1..d2)}
 
   private
     def reading_quota

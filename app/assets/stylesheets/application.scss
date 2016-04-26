@@ -24,3 +24,11 @@
 .alert-notice {
   @extend .alert-info;
 }
+
+table th {
+  padding-right: 3em;
+}
+
+table td {
+  padding-right: 3em;
+}
