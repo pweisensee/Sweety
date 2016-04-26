@@ -1,7 +1,9 @@
 <h4><strong>Blood Glucose Level Report</strong></h4>
+<br />
+<p>Average: <%=  %></p>
+<p>Maximum: <%=  %></p>
+<p>Minimum: <%=  %></p>
 
-  <% if @report.start_date === @report.end_date %>
-    <%= render 'date_report' %>
-  <% else %>
-    <%= render 'range_report' %>
-  <% end %>
+<%= details(@report) %>
+
+<p><%= link_to "Back", :back, class: 'btn btn-default'  %></p>
