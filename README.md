@@ -2,11 +2,13 @@
 CodeTheory - a simple web application which enables a user to input and 
 track blood glucose readings and view reports on those readings.
 
-## Development System
-* Ubuntu 15.10
+![alt text](https://github.com/pweisensee/Sweety/tree/master/app/assets/images/4-26.png "Preview")
+
+## Development Environment
+* Ubuntu 15.10 64-bit
 * IDE: RubyMine 2016.1
 
-#Installation
+##Installation
 
 1. Running a fresh install of Ubuntu 15.10
 
