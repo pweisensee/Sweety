@@ -2,7 +2,7 @@ class ReportsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @reports = Report.all
+    @reports = current_user.reports
   end
 
   def new
