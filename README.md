@@ -18,52 +18,52 @@ track blood glucose readings and view reports on those readings.
 
 3. Install Ruby via rbenv:
 
-	cd
+	* cd
 
-	git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+	* git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 
-	echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+	* echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 
-	echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+	* echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 
-	exec $SHELL
+	* exec $SHELL
 
-	git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+	* git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 
-	echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
+	* echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
 
-	exec $SHELL
+	* exec $SHELL
 
-	git clone https://github.com/rbenv/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
+	* git clone https://github.com/rbenv/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
 
-	rbenv install 2.3.0
+	* rbenv install 2.3.0
 
-	rbenv global 2.3.0
+	* rbenv global 2.3.0
 
-	ruby -v
+	* ruby -v
 
 4. Install Bundler gem:
 
-	gem install bundler
+	* gem install bundler
 
 5. Install NodeJS version 4
 
-	curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+	* curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 
-	sudo apt-get install -y nodejs
+	* sudo apt-get install -y nodejs
 
 6. Configure Git
 
-	git config --global color.ui true
-	git config --global user.name "NAME"
-	git config --global user.email "YOUR@EMAIL.com"
-	ssh-keygen -t rsa -C "YOUR@EMAIL.com"
+	* git config --global color.ui true
+	* git config --global user.name "NAME"
+	* git config --global user.email "YOUR@EMAIL.com"
+	* ssh-keygen -t rsa -C "YOUR@EMAIL.com"
 
 7. Install Rails version 4:
 
-	gem install rails -v 4.2.4
+	* gem install rails -v 4.2.4
 
-	rbenv rehash
+	* rbenv rehash
 
 8.
 
