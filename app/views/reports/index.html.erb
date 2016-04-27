@@ -1,23 +1,26 @@
 <h1>Report History</h1>
 
 <div>
-  <%= link_to "Run today's report", new_report_path, class: 'btn btn-default' %>
-  <%= link_to 'Run month-to-date report', new_report_path, class: 'btn btn-default' %>
-  <%= link_to 'Run month report', new_report_path, class: 'btn btn-default' %>
-  <%= link_to 'Create new report', new_report_path, class: 'btn btn-default' %>
+  <%= report_form(Date.today, "Today's Report") %>
+  <%= link_to 'Run month report', new_report_path, class: 'btn btn-success' %>
+  <%= report_form(Date.today.beginning_of_month, 'Month-to-date Report') %>
+  <%= link_to 'Create new report', new_report_path, class: 'btn btn-primary' %>
 </div>
 
-<table>
-  <tr>
-    <th>From</th>
-    <th>To</th>
-  </tr>
-   
-  <% @reports.each do |report| %>
-    <tr>
-      <td><%= report.start_date.strftime("%A, %B %d, %Y") %></td>
-      <td><%= report.end_date.strftime("%A, %B %d, %Y") %></td>
-      <td><%= link_to "View Report", report, class: 'btn btn-success'  %></td>
-    </tr>
-  <% end %>
-</table>
+<div>
+  <h4>Recent Reports</h4>
+  <table>
+    <tr>
+      <th>From</th>
+      <th>To</th>
+    </tr>
+     
+    <% @reports.first(5).each do |report| %>
+      <tr>
+        <td><%= report.start_date.strftime("%A, %B %d, %Y") %></td>
+        <td><%= report.end_date.strftime("%A, %B %d, %Y") %></td>
+        <td><%= link_to "View Report", report, class: 'btn btn-primary'  %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
