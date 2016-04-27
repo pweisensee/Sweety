@@ -1,6 +1,5 @@
 # Tests for reading model
 describe Reading, type: :model do
-
   describe 'attributes' do
     it "allows reading and writing of a valid :glucose_level" do
       reading = Reading.new

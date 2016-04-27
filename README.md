@@ -5,7 +5,7 @@ track blood glucose readings and view reports on those readings.
 ![alt text](https://raw.githubusercontent.com/pweisensee/Sweety/master/app/assets/images/4-26.png "Preview")
 
 ## Development Environment
-* Ubuntu 15.10 64-bit
+* OS: Ubuntu 15.10 (64-bit)
 * IDE: RubyMine 2016.1
 
 ##Installation
@@ -67,6 +67,21 @@ track blood glucose readings and view reports on those readings.
 
 	* rbenv rehash
 
-8.
+## Running locally
 
+1. Download/extract
 
+2. Navigate to directory
+
+3. Run to setup database:
+   * 'rake db:create'
+   * 'rake db:migrate'
+   * 'rake db:seed' (optional)
+
+4. Run 'rails s'
+
+4. Open [http://localhost:3000/](http://localhost:3000/)
+
+5. Seeded Login credentials (optional):
+   * Email: 'u0@gmail.com'
+   * Password: 'test1234'

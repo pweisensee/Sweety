@@ -1,9 +1,0 @@
-# Sample Readings data
-one:
-  glucose_level: 1
-
-two:
-  glucose_level: 75
-
-three:
-  glucose_level: 155
