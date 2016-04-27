@@ -1,5 +1,4 @@
-require 'rails_helper'
-
+# Tests for reading model
 describe Reading, type: :model do
 
   describe 'attributes' do

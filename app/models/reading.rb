@@ -1,12 +1,15 @@
 class Reading < ActiveRecord::Base
+  # Each reading belongs to the user that created it
   belongs_to :user
 
+  # Quota limits the number of readings one can submit per day
   validate :reading_quota, :on => :create
 
+  # record glucose level, ensure it is a positive integer
   validates :glucose_level, presence: true,
             numericality: { only_integer: true, greater_than_or_equal_to: 0,
                             :message => "Readings must be a positive integer. Please try again."}
-
+  # Ensure current_user is accessible
   mattr_accessor :current_user
 
   # default scope for readings arranges them in ascending order

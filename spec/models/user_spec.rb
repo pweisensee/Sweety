@@ -1,5 +1,4 @@
-require 'rails_helper'
-
+# Tests for Report model
 describe User, type: :model do
   it "has none to begin with" do
     expect(User.count).to eq 0

@@ -1,5 +1,4 @@
-require 'rails_helper'
-
+# Tests for Report model
 describe Report, type: :model do
   it "has no reports to begin with" do
     expect(Report.count).to eq 0

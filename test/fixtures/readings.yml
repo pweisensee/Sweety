@@ -1,7 +1,9 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
+# Sample Readings data
 one:
   glucose_level: 1
 
 two:
-  glucose_level: 1
+  glucose_level: 75
+
+three:
+  glucose_level: 155
