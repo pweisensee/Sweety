@@ -1,7 +1,6 @@
 == README
 
-This README to document whatever the steps that are necessary to get the
-application up and running.
+This README is used in conjunction with the Github Readme.md
 
 * Ruby version = 2.3.0
 
