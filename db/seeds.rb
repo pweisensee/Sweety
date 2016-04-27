@@ -18,10 +18,10 @@ end
 
 test_user = User.first
 
-100.times do
+150.times do
   reading = Reading.create!(user_id: test_user.id,
-                  glucose_level: (rand(350)))
-  created = (rand*66).days.ago
+                  glucose_level: (rand(350) + 10))
+  created = (rand*75).days.ago
   reading.created_at = created
   reading.created_on = created
   reading.save
