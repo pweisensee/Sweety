@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
   # Readings all belong to the user that created them
   has_many :readings do
+
+    # Returns readings created today by user
     def today
       where(:created_at => (Time.zone.now.beginning_of_day..Time.zone.now))
     end

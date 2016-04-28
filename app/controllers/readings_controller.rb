@@ -1,4 +1,5 @@
 class ReadingsController < ApplicationController
+  # Require user login before accessing any readings
   before_action :authenticate_user!
 
   def index

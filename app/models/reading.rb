@@ -18,6 +18,8 @@ class Reading < ActiveRecord::Base
   scope :within_dates, ->(d1, d2) {where(:created_on => d1..d2)}
 
   private
+    # Checks that users have not created 4 readings 'today' yet.
+    # The limit for daily new readings is no more than 4. See 'Sweety.Requirements.txt'
     def reading_quota
       if current_user && current_user.readings.today.count >= 4
         errors.add(:base, "Exceeds daily limit for blood glucose readings. Please try again tomorrow.")

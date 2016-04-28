@@ -1,4 +1,5 @@
 class ReportsController < ApplicationController
+  # Require user login before accessing any reports
   before_action :authenticate_user!
 
   def index
