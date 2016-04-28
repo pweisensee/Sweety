@@ -1,20 +1,20 @@
 <h1>Report History</h1>
 
-<div>
+<div class="navbar-form navbar-left reports">
+  <h3>Create New Report</h3>
   <%= report_form(Date.today, "Today's Report") %>
   <%= link_to 'Last Month report', new_report_path, class: 'btn btn-success' %>
-  <%= report_form(Date.today.beginning_of_month, 'Month-to-date Report') %>
-  <%= link_to 'Create new report', new_report_path, class: 'btn btn-primary' %>
+  <%= report_form(Date.today.beginning_of_month, 'Month-To-Date Report') %>
+  <%= link_to 'Create New Report', new_report_path, class: 'btn btn-primary' %>
 </div>
 
 <div>
-  <h4>Recent Reports</h4>
+  <h3>Recent Reports</h3>
   <table>
     <tr>
       <th>From</th>
       <th>To</th>
     </tr>
-     
     <% @reports.first(5).each do |report| %>
       <tr>
         <td><%= report.start_date.strftime("%A, %B %d, %Y") %></td>

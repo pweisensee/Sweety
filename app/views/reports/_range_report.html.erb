@@ -1,2 +1,3 @@
+<h2>Blood Glucose Level Report <small><%= @report.start_date.strftime("%B %d, %Y")%> - <%= @report.end_date.strftime("%B %d, %Y")%></small></h2>
 <div id="range-chart" class="chart"></div>
 <%= render 'chart' %>
