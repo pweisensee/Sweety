@@ -11,7 +11,6 @@ module ReportsHelper
   # Place hidden forms on page to allow default reports to be dynamic
   def report_form(start_date, title)
     @start_d = start_date
-    @end_d = Date.today
     @title = title
     render 'default_report'
   end

@@ -1,7 +1,7 @@
 <%= form_for :report, url: reports_path do |f| %>
 
-    <%= f.hidden_field :start_date, selected: @start_d %>
-    <%= f.hidden_field :end_date, selected: @end_d %>
+    <%= f.hidden_field :start_date, value: @start_d %>
+    <%= f.hidden_field :end_date, value: Date.today %>
 
     <%= f.submit "#{@title}", class: 'btn btn-success' %>
 
