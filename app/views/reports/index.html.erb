@@ -2,7 +2,7 @@
 
 <div>
   <%= report_form(Date.today, "Today's Report") %>
-  <%= link_to 'Run month report', new_report_path, class: 'btn btn-success' %>
+  <%= link_to 'Last Month report', new_report_path, class: 'btn btn-success' %>
   <%= report_form(Date.today.beginning_of_month, 'Month-to-date Report') %>
   <%= link_to 'Create new report', new_report_path, class: 'btn btn-primary' %>
 </div>
